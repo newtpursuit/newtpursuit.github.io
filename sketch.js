@@ -47,7 +47,7 @@ function draw() {
     textSize(32);
     contents = "Congratulations, you've completed my game!\nI had fun; I hope you feel the same\n\nHere's a reward:";
     text(contents, width/2, height/4);
-    link = createA("javascript:alert('Sorry, I'm not quite ready yet. Check in again soon :)');", "Download (might take a minute)");
+    link = createA("javascript:alert('Sorry, I\'m not quite ready yet. Check in again soon :)'", "Download (might take a minute)");
     // link.attribute("download", "funny.mp4");
     link.center();
     pop();
