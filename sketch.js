@@ -47,7 +47,7 @@ function draw() {
     textSize(32);
     contents = "Congratulations, you've completed my game!\nI had fun; I hope you feel the same\n\nHere's a reward:";
     text(contents, width/2, height/4);
-    link = createA("javascript:alert('I\'m not quite ready yet, but check back soon')", "View Reward");
+    link = createA("https://drive.google.com/file/d/1sdZVz3KbyrMTyG3KWnmwP6IqBtVVg3D3/view", "Click Here");
     link.center();
     pop();
     noLoop();
