@@ -37,11 +37,13 @@ function setup() {
     color(71, 107, 161), // Blue
     color(93, 51, 130) // Purple
   ];
+  sendPOST("accessed");
 }
 
 function draw() {
   background(220);
   if (completed) {
+    sendPOST("solved");
     push();
     textAlign(CENTER);
     textSize(32);
@@ -93,3 +95,32 @@ function submit() {
     alert("Try again");
   }
 }
+
+function sendPOST(stage) {
+  var url = 'https://script.google.com/macros/s/AKfycbzWGUuzJXQsv_69egMxBtWiNje1Y-c7gxal-lsrXt--KCMRN4KIZ17re-plolkiAdbQPg/exec';
+  
+  // Define the data to be sent in the request
+  var data = {
+    "stage": stage
+  };
+  
+  // Make the POST request
+  fetch(url, {
+    method: 'POST',
+    body: JSON.stringify(data)
+  })
+  .then(response => {
+    if (response.ok) {
+      // Request was successful
+      console.log('POST request succeeded');
+    } else {
+      // Request failed
+      console.error('POST request failed');
+    }
+  })
+  .catch(error => {
+    console.error('Error:', error);
+  });
+
+}
+
